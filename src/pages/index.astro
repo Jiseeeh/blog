@@ -1,17 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import BlogCard from "../components/BlogCard.astro";
 
 const primary = "#FFFFFE";
 const secondary = "#F2F4F6";
 const heading = "#00214D";
 const paragraph = "#1B2D45";
 const accent = "#00EBC7";
+
+const blogs = await Astro.glob("../blogs/*.md");
 ---
 
 <Layout title="Blog">
   <main>
     <Header />
+    {
+      blogs.map((blog) => (
+        <BlogCard
+          title={blog.frontmatter.title}
+          date={blog.frontmatter.date}
+          excerpt={blog.frontmatter.excerpt}
+        />
+      ))
+    }
   </main>
 </Layout>
 
