@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const blogs = await Astro.glob("../../blogs/*.md");
+
+  const dates = blogs.map((blog) => ({
+    params: { blogDate: blog.frontmatter.date },
+    props: { blog },
+  }));
+
+  return [dates];
+}
+
+const { blog } = Astro.props;
+const { date } = blog.frontmatter;
+const { Content } = blog;
+---
+
+<Layout title={date}>
+  <Content />
+</Layout>
