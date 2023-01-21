@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const blogs = await Astro.glob("../../blogs/*.md");
+  const blogs = await Astro.glob("../../blogs/*.mdx");
 
   const dates = blogs.map((blog) => ({
     params: { blogDate: blog.frontmatter.date },
