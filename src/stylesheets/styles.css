@@ -28,6 +28,7 @@ p {
 
 a {
   color: var(--accent);
+  text-decoration: none;
 }
 
 blockquote {
