@@ -52,7 +52,6 @@ main {
 .btn {
   cursor: pointer;
   border: none;
-  outline: none;
   background: transparent;
   color: var(--heading);
   font-weight: bold;
