@@ -1,0 +1,25 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <article>
+    <h1>{frontmatter.title}</h1>
+    <span>{frontmatter.date}</span>
+    <section><slot /></section>
+  </article>
+</Layout>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h1 {
+    text-align: center;
+  }
+</style>
