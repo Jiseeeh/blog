@@ -44,6 +44,11 @@ main {
   min-height: 100vh;
 }
 
+[astro-icon] {
+  height: 30px;
+  width: 30px;
+}
+
 .btn {
   cursor: pointer;
   border: none;

@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon";
+
 export interface Props {
   title: string;
   date: string;
@@ -12,8 +14,8 @@ const { title, date, excerpt } = Astro.props;
   <span>{date}</span>
   <p>{excerpt}</p>
   <a class="btn" role="button" href={`/blogs/${date}`} rel="prefetch"
-    >Read more...</a
-  >
+    >Read more <Icon name="ph:caret-right-bold" />
+  </a>
 </section>
 
 <style>
@@ -49,5 +51,7 @@ const { title, date, excerpt } = Astro.props;
   a {
     cursor: pointer;
     max-width: max-content;
+    display: flex;
+    align-items: center;
   }
 </style>
