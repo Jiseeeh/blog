@@ -11,7 +11,7 @@ const { title, date, excerpt } = Astro.props;
   <h1>{title}</h1>
   <span>{date}</span>
   <p>{excerpt}</p>
-  <a role="button" href={`/blogs/${date}`}>Read more...</a>
+  <a class="btn" role="button" href={`/blogs/${date}`}>Read more...</a>
 </section>
 
 <style>
